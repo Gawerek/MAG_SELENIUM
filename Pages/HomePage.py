@@ -3,10 +3,13 @@ from common import BasePage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class HomePage:
 
+class HomePage:
     load_delay_link_locator = (By.CSS_SELECTOR, 'a[href="/loaddelay"]')
     ajax_data_link_locator = (By.LINK_TEXT, "AJAX Data")
+    scroll_barr_link_locator = (By.CSS_SELECTOR, 'a[href="/scrollbars"]')
+    dynamic_table_link_locator = (By.CSS_SELECTOR, 'a[href="/dynamictable')
+
     url = 'http://uitestingplayground.com'
 
     def __init__(self, driver):
@@ -24,5 +27,17 @@ class HomePage:
     def click_ajax_data_link(self):
         link = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.ajax_data_link_locator)
+        )
+        link.click()
+
+    def click_scroll_barr_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.scroll_barr_link_locator)
+        )
+        link.click()
+
+    def click_dynamic_table_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.dynamic_table_link_locator)
         )
         link.click()
