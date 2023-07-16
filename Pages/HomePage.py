@@ -12,6 +12,7 @@ class HomePage:
     verify_text_link_locator = (By.CSS_SELECTOR, 'a[href="/verifytext')
     progress_bar_link_locator = (By.CSS_SELECTOR, 'a[href="/progressbar')
     sample_app_link_locator = (By.CSS_SELECTOR, 'a[href="/sampleapp')
+    mouseover_link_locator = (By.CSS_SELECTOR, 'a[href="/mouseover')
     url = 'http://uitestingplayground.com'
 
     def __init__(self, driver):
@@ -59,5 +60,11 @@ class HomePage:
     def click_sample_app_link(self):
         link = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.sample_app_link_locator)
+        )
+        link.click()
+
+    def click_mouse_over_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.mouseover_link_locator)
         )
         link.click()

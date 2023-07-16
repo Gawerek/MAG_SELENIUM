@@ -2,7 +2,7 @@
 from Pages.HomePage import HomePage
 from Pages.ProgressBar import ProgressBarPage
 
-def test_welcome_text(driver):
+def test_progress_bar(driver):
     home_page = HomePage(driver)
     home_page.navigate()
     home_page.click_progress_bar_link()
