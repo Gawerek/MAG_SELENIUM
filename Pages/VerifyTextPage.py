@@ -12,3 +12,7 @@ class VerifyTextPage:
             EC.presence_of_element_located(self.locator))
         print(f"Element text: {welcome_text_element.text}")  # added this line to print the text
         return 'Welcome' in welcome_text_element.text and 'UserName' in welcome_text_element.text
+
+
+
+

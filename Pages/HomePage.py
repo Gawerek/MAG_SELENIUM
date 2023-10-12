@@ -13,7 +13,13 @@ class HomePage:
     progress_bar_link_locator = (By.CSS_SELECTOR, 'a[href="/progressbar')
     sample_app_link_locator = (By.CSS_SELECTOR, 'a[href="/sampleapp')
     mouseover_link_locator = (By.CSS_SELECTOR, 'a[href="/mouseover')
+    click_link_locator = (By.CSS_SELECTOR, 'a[href="/click')
+    classatr_link_locator = (By.CSS_SELECTOR, 'a[href="/classattr')
+    hiddenlayers_link_locator = (By.CSS_SELECTOR, 'a[href="/hiddenlayers')
+    dynamicid_link_locator = (By.CSS_SELECTOR, 'a[href="/dynamicid')
+
     url = 'http://uitestingplayground.com'
+
 
     def __init__(self, driver):
         self.driver = driver
@@ -66,5 +72,29 @@ class HomePage:
     def click_mouse_over_link(self):
         link = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(self.mouseover_link_locator)
+        )
+        link.click()
+
+    def click_click_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.click_link_locator)
+        )
+        link.click()
+
+
+    def click_classatr_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.classatr_link_locator)
+        )
+        link.click()
+
+    def click_hiddenlayers_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.hiddenlayers_link_locator)
+        )
+        link.click()
+    def click_dynamicid_link(self):
+        link = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.dynamicid_link_locator)
         )
         link.click()

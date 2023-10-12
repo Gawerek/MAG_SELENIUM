@@ -20,6 +20,7 @@ class MouseOverPage:
 
     def get_click_count(self):
 
-        count = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.click_count_element))
+        count = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.click_count_element))
         print(count.text)
         return int(count.text)

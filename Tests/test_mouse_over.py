@@ -1,7 +1,8 @@
 from Pages.HomePage import HomePage
 from Pages.MouseOverPage import MouseOverPage
+import pytest
 
-
+@pytest.mark.run(order=1)
 def test_mouse_over(driver):
     home_page = HomePage(driver)
     home_page.navigate()
